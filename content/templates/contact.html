@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block start %}
+contactttttt
+
+<li>
+
+</li>
+{% for contact in contacts %}
+
+<li> {{forloop.counter}})  {{contact.phone_number}} | {{contact.email}} | {{contact.address}}</li>
+
+{% endfor %}
+{% endblock start %}
