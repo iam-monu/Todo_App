@@ -14,11 +14,18 @@
         </form>
 
 
-        <ul class="list-group">
-          <li class="list-group-item mt-4">An item
-            <a href="" class="btn btn-danger">Del </a>
-            <a href="" class="btn btn-primary">update </a>
+        <ul class="list-group mt-4">
+            {% for task in tasks %}
+          <li class="list-group-item mt-4">
+              {% if task.is_complete %}
+              <strike>{{task.task_name}}</strike>
+              {% else %}
+                {{task.task_name}}
+              {%endif %}
+            <a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Del </a>
+            <a href="{% url 'mark_as_completed' task.id %}" class="btn btn-primary">Mark Completed </a>
           </li>
+            {% endfor%}
 
         </ul>
     </div>
