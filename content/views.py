@@ -89,4 +89,4 @@ def register_page(request):
         user = User(email=email, password=password, username=email)
         user.set_password(password)
         user.save()
-    return render(request, 'register.html')
+    return render(request, 'todo.html')
